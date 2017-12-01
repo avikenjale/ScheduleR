@@ -16,4 +16,9 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="../AK.PRJCT.CORE.ScheduleR.MS.Student.Data/AK.PRJCT.CORE.ScheduleR.MS.Student.Data.csproj"/>
+    <ProjectReference Include="../AK.PRJCT.CORE.ScheduleR.MS.Student.Entities/AK.PRJCT.CORE.ScheduleR.MS.Student.Entities.csproj"/>
+  </ItemGroup>
+
 </Project>

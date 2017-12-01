@@ -20,6 +20,7 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Student.API
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                .UseUrls("http://localhost:9000")
                 .Build();
     }
 }

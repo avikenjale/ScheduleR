@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../AK.PRJCT.CORE.ScheduleR.MS.Teacher.Data/AK.PRJCT.CORE.ScheduleR.MS.Teacher.Data.csproj"/>
+    <ProjectReference Include="../AK.PRJCT.CORE.ScheduleR.MS.Teacher.Domain/AK.PRJCT.CORE.ScheduleR.MS.Teacher.Domain.csproj"/>
+  </ItemGroup>
+</Project>

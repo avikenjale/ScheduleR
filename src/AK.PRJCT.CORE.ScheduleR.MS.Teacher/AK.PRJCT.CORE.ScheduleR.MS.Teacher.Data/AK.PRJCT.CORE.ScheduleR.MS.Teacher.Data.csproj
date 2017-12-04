@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../AK.PRJCT.CORE.ScheduleR.MS.Teacher.Domain/AK.PRJCT.CORE.ScheduleR.MS.Teacher.Domain.csproj"/>
+    <ProjectReference Include="../AK.PRJCT.CORE.ScheduleR.MS.Teacher.Entities/AK.PRJCT.CORE.ScheduleR.MS.Teacher.Entities.csproj"/>
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+  </ItemGroup>
+</Project>

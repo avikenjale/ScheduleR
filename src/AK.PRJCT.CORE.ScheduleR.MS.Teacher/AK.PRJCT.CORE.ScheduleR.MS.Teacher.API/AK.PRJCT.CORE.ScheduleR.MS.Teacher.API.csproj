@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../AK.PRJCT.CORE.ScheduleR.MS.Teacher.Data/AK.PRJCT.CORE.ScheduleR.MS.Teacher.Data.csproj"/>
+    <ProjectReference Include="../AK.PRJCT.CORE.ScheduleR.MS.Teacher.Domain/AK.PRJCT.CORE.ScheduleR.MS.Teacher.Domain.csproj"/>
+    <ProjectReference Include="../AK.PRJCT.CORE.ScheduleR.MS.Teacher.Business/AK.PRJCT.CORE.ScheduleR.MS.Teacher.Business.csproj"/>
+  </ItemGroup>   
+</Project>

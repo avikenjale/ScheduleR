@@ -1,11 +1,18 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using AK.PRJCT.CORE.ScheduleR.MS.Teacher.Business.Services;
+using AK.PRJCT.CORE.ScheduleR.MS.Teacher.Data.Repositories;
+using AK.PRJCT.CORE.ScheduleR.MS.Teacher.Data.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace AK.PRJCT.CORE.ScheduleR.MS.Student.API
+namespace AK.PRJCT.CORE.ScheduleR.MS.Teacher.API
 {
     public class Startup
     {
@@ -19,14 +26,13 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Student.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient(typeof(Data.Repositories.IStudentRepository), typeof(Data.Repositories.StudentRepository));
-            services.AddTransient(typeof(Data.Services.IStudentDataService), typeof(Data.Services.StudentDataService));
-            services.AddTransient(typeof(Business.Services.IStudentService), typeof(Business.Services.StudentService));
+            services.AddTransient(typeof(ITeacherService),typeof(TeacherService));
+            services.AddTransient(typeof(ITeacherDataService),typeof(TeacherDataService));
+            services.AddTransient(typeof(ITeacherRepository),typeof(TeacherRepository));
 
-            services.AddSingleton(typeof(ILoggerFactory), typeof(LoggerFactory));  
+            services.AddSingleton(typeof(ILoggerFactory), typeof(LoggerFactory));            
 
             services.AddMvc();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

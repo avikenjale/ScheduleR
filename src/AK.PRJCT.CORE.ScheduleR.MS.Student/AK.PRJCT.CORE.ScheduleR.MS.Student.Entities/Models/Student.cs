@@ -6,6 +6,6 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Student.Entities.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public virtual Parent parent { get; set; }
+        public virtual Parent Parent { get; set; }
     }
 }

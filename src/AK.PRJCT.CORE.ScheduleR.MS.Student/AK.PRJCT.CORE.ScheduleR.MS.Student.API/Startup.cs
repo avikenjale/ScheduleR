@@ -19,7 +19,7 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Student.API
         {
             services.AddTransient(typeof(Data.Repositories.IStudentRepository), typeof(Data.Repositories.StudentRepository));
             services.AddTransient(typeof(Data.Services.IStudentDataService), typeof(Data.Services.StudentDataService));
-
+             services.AddTransient(typeof(Business.Services.IStudentService), typeof(Business.Services.StudentService));
             services.AddMvc();            
             
             

@@ -12,9 +12,18 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Student.Data.Services
         {
             StudentRepository = studentRepository;
         }
-        public Task<IEnumerable<Entities.Models.Student>> GetStudentsAsync()
+        public Task<IEnumerable<Domain.Models.StudentModel>> GetStudentsAsync()
         {
             return StudentRepository.GetStudentsAsync();
+        }
+
+        public Task<IEnumerable<Domain.Models.StudentModel>> GetStudentsByNameAsync(string name)
+        {
+            return StudentRepository.GetStudentsByNameAsync(name);
+        }
+        public Task<IEnumerable<Domain.Models.StudentModel>> GetStudentsByParentNameAsync(string name)
+        {
+            return StudentRepository.GetStudentsByParentNameAsync(name);
         }
     }
 }

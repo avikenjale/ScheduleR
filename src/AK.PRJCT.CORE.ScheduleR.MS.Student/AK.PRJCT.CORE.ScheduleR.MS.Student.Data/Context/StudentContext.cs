@@ -14,9 +14,17 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Student.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<AK.PRJCT.CORE.ScheduleR.MS.Student.Entities.Models.Student>()
+            modelBuilder.Entity<AK.PRJCT.CORE.ScheduleR.MS.Student.Entities.Models.Parent>()
+            .ToTable("Parents")
+            .HasKey(p => p.ParentId);
+
+             modelBuilder.Entity<AK.PRJCT.CORE.ScheduleR.MS.Student.Entities.Models.Student>()
             .ToTable("Students")
             .HasKey(s => s.StudentId);
+
+             modelBuilder.Entity<AK.PRJCT.CORE.ScheduleR.MS.Student.Entities.Models.Student>()
+            .ToTable("Students")
+            .HasOne(s => s.Parent);
         }
     }
 }

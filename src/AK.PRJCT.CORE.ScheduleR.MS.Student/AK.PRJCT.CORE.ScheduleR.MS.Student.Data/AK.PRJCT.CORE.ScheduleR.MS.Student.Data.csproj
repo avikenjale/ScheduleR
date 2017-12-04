@@ -11,5 +11,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include ="../AK.PRJCT.CORE.ScheduleR.MS.Student.Entities/AK.PRJCT.CORE.ScheduleR.MS.Student.Entities.csproj" />
+    <ProjectReference Include ="../AK.PRJCT.CORE.ScheduleR.MS.Student.Domain/AK.PRJCT.CORE.ScheduleR.MS.Student.Domain.csproj" />
   </ItemGroup>
 </Project>

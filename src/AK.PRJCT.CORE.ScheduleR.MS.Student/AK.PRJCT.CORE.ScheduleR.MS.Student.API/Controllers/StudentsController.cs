@@ -36,6 +36,30 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Student.API.Controllers
             return Ok(students);
         }
 
+        [HttpGet, Route("api/[controller]/{id:int}")]
+        public async Task<IActionResult> GetStudentAsync(int id)
+        {
+            try
+            {
+                var student = await StudentService.GetStudentAsync(id);
+
+                if (student != null)
+                {
+                    return Ok(student);
+                }
+                else
+                {
+                    Logger.LogInformation("No students found for given id.");
+                    return NotFound("No students found for given id.");
+                }
+            }
+            catch (Exception exception)
+            {
+                Logger.LogError(exception.Message);
+                return StatusCode(500);
+            }
+        }
+
         [HttpGet, Route("api/[controller]/{name}")]
         public async Task<IActionResult> GetStudentsByNameAsync(string name)
         {
@@ -53,7 +77,7 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Student.API.Controllers
                     return NotFound("No students found for given criteria.");
                 }
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 Logger.LogError(exception.Message);
                 return StatusCode(500);
@@ -77,7 +101,53 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Student.API.Controllers
                     return NotFound("No students found for given parent criteria.");
                 }
             }
-            catch(Exception exception)
+            catch (Exception exception)
+            {
+                Logger.LogError(exception.Message);
+                return StatusCode(500);
+            }
+        }
+
+        [HttpPost, Route("api/[controller]")]
+        public async Task<IActionResult> PostStudentAsync([FromBody]Domain.Models.StudentModel student)
+        {
+            try
+            {
+                var results = await StudentService.SaveStudentAsync(student).ConfigureAwait(false);
+
+                if(results <=0)
+                {
+                    Logger.LogWarning("Unable to save student properly.");      
+                    return BadRequest();              
+                }
+
+                return Ok($"Student saved successfully. {results}");
+            }
+            catch (Exception exception)
+            {
+                Logger.LogError(exception.Message);
+                return StatusCode(500);
+            }
+        }
+
+        [HttpDelete, Route("api/[controller]/{id}")]
+        public async Task<IActionResult> DeleteStudentAsync(int id)
+        {
+            try
+            {
+                var result = await StudentService.DeleteStudentAsync(id);
+
+                if (result != 0)
+                {
+                    return Ok("Student deleted successfully for given id.");
+                }
+                else
+                {
+                    Logger.LogInformation("No students found for given id.");
+                    return NotFound("No students found for given id.");
+                }
+            }
+            catch (Exception exception)
             {
                 Logger.LogError(exception.Message);
                 return StatusCode(500);

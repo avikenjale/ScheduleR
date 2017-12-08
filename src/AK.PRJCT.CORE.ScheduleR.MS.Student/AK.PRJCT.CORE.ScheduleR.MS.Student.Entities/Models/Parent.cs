@@ -13,8 +13,6 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Student.Entities.Models
         public string Address { get; set; }
         public string City { get; set; }    
         public string State { get; set; }
-        public string Zip { get; set; }
-
-        //public virtual IEnumerable<Student> Students { get; set; }
+        public string Zip { get; set; }       
     }
 }

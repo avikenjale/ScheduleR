@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-  <ProjectReference Include="../AK.PRJCT.CORE.ScheduleR.MS.Class.Business/AK.PRJCT.CORE.ScheduleR.MS.Class.Business.csproj"/>
-    <ProjectReference Include="../AK.PRJCT.CORE.ScheduleR.MS.Class.Data/AK.PRJCT.CORE.ScheduleR.MS.Class.Data.csproj"/>
-    <ProjectReference Include="../AK.PRJCT.CORE.ScheduleR.MS.Class.Domain/AK.PRJCT.CORE.ScheduleR.MS.Class.Domain.csproj"/>    
+  <ProjectReference Include="../AK.PRJCT.CORE.ScheduleR.MS.Class.Business/AK.PRJCT.CORE.ScheduleR.MS.Class.Business.csproj" />
+    <ProjectReference Include="../AK.PRJCT.CORE.ScheduleR.MS.Class.Data/AK.PRJCT.CORE.ScheduleR.MS.Class.Data.csproj" />
+    <ProjectReference Include="../AK.PRJCT.CORE.ScheduleR.MS.Class.Domain/AK.PRJCT.CORE.ScheduleR.MS.Class.Domain.csproj" />    
   </ItemGroup>
 </Project>

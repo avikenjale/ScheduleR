@@ -17,6 +17,11 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Student.Data.Services
             return StudentRepository.GetStudentsAsync();
         }
 
+        public Task<Domain.Models.StudentModel> GetStudentAsync(int studentId)
+        {
+            return StudentRepository.GetStudentAsync(studentId);
+        }
+
         public Task<IEnumerable<Domain.Models.StudentModel>> GetStudentsByNameAsync(string name)
         {
             return StudentRepository.GetStudentsByNameAsync(name);
@@ -24,6 +29,16 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Student.Data.Services
         public Task<IEnumerable<Domain.Models.StudentModel>> GetStudentsByParentNameAsync(string name)
         {
             return StudentRepository.GetStudentsByParentNameAsync(name);
+        }
+
+        public Task<int> SaveStudentAsync(Domain.Models.StudentModel student)
+        {
+            return StudentRepository.SaveStudentAsync(student);
+        }
+
+        public Task<int> DeleteStudentAsync(int studentId)
+        {
+            return StudentRepository.DeleteStudentAsync(studentId);
         }
     }
 }

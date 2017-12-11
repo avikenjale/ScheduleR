@@ -30,16 +30,17 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Student.Entities.Tests.Models
         [Test]
         public void can_set_and_get_properties()
         {
-            var obj = new Entities.Models.Parent{
+            var obj = new Entities.Models.Parent
+            {
                 ParentId = 1,
                 FirstName = "TEST",
-                LastName ="TEST",
+                LastName = "TEST",
                 PhoneNumber = "1234567890",
-                Email ="TEST@TEST.COM",
+                Email = "TEST@TEST.COM",
                 Address = "TEST",
-                City ="TEST",
-                State ="TEST",
-                Zip ="12345"
+                City = "TEST",
+                State = "TEST",
+                Zip = "12345"
             };
 
             obj.ShouldNotBeNull();
@@ -49,9 +50,9 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Student.Entities.Tests.Models
             obj.PhoneNumber.ShouldBe("1234567890");
             obj.Email.ShouldBe("TEST@TEST.COM");
             obj.Address.ShouldBe("TEST");
-obj.City.ShouldBe("TEST");
-obj.State.ShouldBe("TEST");
-obj.Zip.ShouldBe("12345");
+            obj.City.ShouldBe("TEST");
+            obj.State.ShouldBe("TEST");
+            obj.Zip.ShouldBe("12345");
         }
     }
 }

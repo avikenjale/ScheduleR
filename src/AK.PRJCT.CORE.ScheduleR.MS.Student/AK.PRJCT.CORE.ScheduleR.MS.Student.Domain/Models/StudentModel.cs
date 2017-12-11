@@ -10,6 +10,7 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Student.Domain.Models
 
         //Parent Details 
         public int ParentId { get; set; }
+        public string Title { get; set; }
         public string ParentFirstName { get; set; }
         public string ParentLastName { get; set; }
         public string PhoneNumber { get; set; }

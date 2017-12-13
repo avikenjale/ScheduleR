@@ -23,5 +23,10 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Class.Business.Services
         {
             return ClassDataService.GetClassesByNameAsync(name);
         }        
+
+        public Task<int> SaveClassAsync(ClassModel class1)
+        {
+            return ClassDataService.SaveClassAsync(class1);
+        }
     }
 }

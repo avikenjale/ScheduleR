@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using AK.PRJCT.CORE.ScheduleR.MS.Class.Business.Services;
+using AK.PRJCT.CORE.ScheduleR.MS.Class.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -52,8 +53,8 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Class.API.Controllers
             }
         }
 
-        [HttpGet, Route("api/[controller]/{name}")]
-        public async Task<IActionResult> GetClassByNameAsync(string name)
+        [HttpGet, Route("api/[controller]/{name}" )]
+        public async Task<IActionResult> GetClassesByNameAsync(string name)
         {
             try
             {
@@ -65,8 +66,31 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Class.API.Controllers
                 }
                 else
                 {
-                    Logger.LogWarning($"Class not found for given criteria {name}");
-                    return NotFound($"Class not found for given criteria {name}");
+                    Logger.LogWarning($"Class not found for given criteria: {name}");
+                    return NotFound($"Class not found for given criteria: {name}");
+                }
+            }
+            catch (Exception exception)
+            {
+                Logger.LogError(exception.Message);
+                return StatusCode(500);
+            }
+        }
+
+        [HttpPost, Route("api/[controller]")]
+        public async Task<IActionResult> SaveClassAsync([FromBody]ClassModel class1)
+        {
+            try
+            {
+                var result = await ClassService.SaveClassAsync(class1).ConfigureAwait(false);
+
+                if (result != 0)
+                {
+                    return Ok("Class saved successfully.");
+                }
+                else
+                {
+                    return NotFound("Class is unable to save.");
                 }
             }
             catch (Exception exception)

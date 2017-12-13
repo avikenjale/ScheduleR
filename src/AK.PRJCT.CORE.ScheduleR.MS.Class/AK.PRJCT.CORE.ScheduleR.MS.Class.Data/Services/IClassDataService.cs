@@ -8,5 +8,6 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Class.Data.Services
     {
         Task<IEnumerable<ClassModel>> GetClassesAsync();
         Task<IEnumerable<ClassModel>> GetClassesByNameAsync(string name);
+        Task<int> SaveClassAsync(ClassModel class1);
     }
 }

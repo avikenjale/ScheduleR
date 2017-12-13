@@ -17,5 +17,13 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Class.Data.Extensions
                 Name = class1.Name
             };
         }
+
+        public static Entities.Models.Class ToClassEntity(this Domain.Models.ClassModel class1)
+        {
+            return new Entities.Models.Class{
+                ClassId = class1.ClassId,
+                Name = class1.Name
+            };
+        }
     }
 }

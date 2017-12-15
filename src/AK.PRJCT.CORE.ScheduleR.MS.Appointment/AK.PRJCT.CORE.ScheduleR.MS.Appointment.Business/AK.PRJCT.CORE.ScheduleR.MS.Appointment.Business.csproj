@@ -1,5 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\AK.PRJCT.CORE.ScheduleR.MS.Appointment.Domain\AK.PRJCT.CORE.ScheduleR.MS.Appointment.Domain.csproj" />
+    <ProjectReference Include="..\AK.PRJCT.CORE.ScheduleR.MS.Appointment.Data\AK.PRJCT.CORE.ScheduleR.MS.Appointment.Data.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>

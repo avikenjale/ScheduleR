@@ -16,4 +16,10 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AK.PRJCT.CORE.ScheduleR.MS.Appointment.Domain\AK.PRJCT.CORE.ScheduleR.MS.Appointment.Domain.csproj" />
+    <ProjectReference Include="..\AK.PRJCT.CORE.ScheduleR.MS.Appointment.Business\AK.PRJCT.CORE.ScheduleR.MS.Appointment.Business.csproj" />
+    <ProjectReference Include="..\AK.PRJCT.CORE.ScheduleR.MS.Appointment.Data\AK.PRJCT.CORE.ScheduleR.MS.Appointment.Data.csproj" />
+  </ItemGroup>
+
 </Project>

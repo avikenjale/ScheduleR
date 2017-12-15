@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace AK.PRJCT.CORE.ScheduleR.MS.Appointment.Business.Services
+namespace AK.PRJCT.CORE.ScheduleR.MS.Appointment.Data.Services
 {
-    public interface IAppointmentService
+    public interface IAppointmentDataService
     {
         Task<IEnumerable<Domain.Models.AppointmentModel>> GetAppointmentsAsync();
         Task<IEnumerable<Domain.Models.AppointmentModel>> GetAppointmentsByDateAsync(string date);

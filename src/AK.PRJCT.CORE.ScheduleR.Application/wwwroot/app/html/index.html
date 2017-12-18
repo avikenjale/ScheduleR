@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script src="../app/js/app.js"></script>
+    <script src="../app/js/config/config.js"></script>
+    <script src="../app/js/controllers/main.controller.js"></script>
+    <script src="../app/js/controllers/students/app.students.list.controller.js"></script>
+    <script src="../app/js/controllers/classes/app.classes.list.controller.js"></script>
+    <script src="../app/js/controllers/teachers/app.teachers.list.controller.js"></script>
+    <script src="../app/js/controllers/appointments/app.appointments.list.controller.js"></script>
+
+    <base href="/">
+
+</head>
+
+<body ng-app="ScheduleRApp">
+    <div ng-controller="MainController as c" ng-cloak>
+        <md-content class="md-padding">
+            <md-nav-bar nav-bar-aria-label="navigation links">
+                <md-nav-item md-nav-click="c.goto('student')" name="Student" ui-sref="student">Student</md-nav-item>
+                <md-nav-item md-nav-click="c.goto('class')" name="Class" ui-sref="class">Class</md-nav-item>
+                <md-nav-item md-nav-click="c.goto('teacher')" name="Teacher" ui-sref="teacher">Teacher</md-nav-item>
+                <md-nav-item md-nav-click="c.goto('appointment')" name="Appointment" ui-sref="appointment">Appointment</md-nav-item>
+            </md-nav-bar>
+            <div class="ext-content">
+                <div ui-view></div>
+            </div>
+        </md-content>
+    </div>
+</body>
+
+</html>

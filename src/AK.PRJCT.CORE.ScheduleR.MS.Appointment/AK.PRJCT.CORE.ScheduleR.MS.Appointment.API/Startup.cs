@@ -28,6 +28,17 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Appointment.API
             services.AddTransient(typeof(ILoggerFactory), typeof(LoggerFactory));
 
             services.AddMvc();
+
+             services.AddCors(o =>
+            {
+                o.AddPolicy("AllowAnyOrigin",
+                builder =>
+                {
+                    builder.AllowAnyHeader();
+                    builder.AllowAnyOrigin();
+                    builder.AllowAnyMethod();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

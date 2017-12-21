@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AK.PRJCT.CORE.ScheduleR.MS.Student.Business.Services;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace AK.PRJCT.CORE.ScheduleR.MS.Student.API.Controllers
 {
+    [EnableCors("AllowAnyOrigin")]
     public class StudentsController : Controller
     {
         protected readonly ILoggerFactory LoggerFactory;
@@ -115,10 +117,10 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Student.API.Controllers
             {
                 var results = await StudentService.SaveStudentAsync(student).ConfigureAwait(false);
 
-                if(results <=0)
+                if (results <= 0)
                 {
-                    Logger.LogWarning("Unable to save student properly.");      
-                    return BadRequest();              
+                    Logger.LogWarning("Unable to save student properly.");
+                    return BadRequest();
                 }
 
                 return Ok($"Student saved successfully. {results}");

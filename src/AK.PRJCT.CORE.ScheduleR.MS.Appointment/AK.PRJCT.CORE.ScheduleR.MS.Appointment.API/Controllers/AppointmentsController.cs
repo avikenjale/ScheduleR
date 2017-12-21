@@ -3,11 +3,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using AK.PRJCT.CORE.ScheduleR.MS.Appointment.Business.Services;
 using AK.PRJCT.CORE.ScheduleR.MS.Appointment.Domain.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace AK.PRJCT.CORE.ScheduleR.MS.Appointment.API.Controllers
 {
+    [EnableCors("AllowAnyOrigin")]
     public class AppointmentsController : Controller
     {
         protected readonly ILogger Logger;

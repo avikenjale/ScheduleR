@@ -23,10 +23,19 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Student.API
             services.AddTransient(typeof(Data.Services.IStudentDataService), typeof(Data.Services.StudentDataService));
             services.AddTransient(typeof(Business.Services.IStudentService), typeof(Business.Services.StudentService));
 
-            services.AddSingleton(typeof(ILoggerFactory), typeof(LoggerFactory));  
+            services.AddSingleton(typeof(ILoggerFactory), typeof(LoggerFactory));
 
             services.AddMvc();
-
+            services.AddCors(o =>
+            {
+                o.AddPolicy("AllowAnyOrigin",
+                builder =>
+                {
+                    builder.AllowAnyHeader();
+                    builder.AllowAnyOrigin();
+                    builder.AllowAnyMethod();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

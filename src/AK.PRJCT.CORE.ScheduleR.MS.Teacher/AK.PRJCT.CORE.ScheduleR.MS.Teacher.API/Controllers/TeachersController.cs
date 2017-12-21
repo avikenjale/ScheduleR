@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AK.PRJCT.CORE.ScheduleR.MS.Teacher.Business.Services;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace AK.PRJCT.CORE.ScheduleR.MS.Teacher.API.Controllers
 {
+    [EnableCors("AllowAnyOrigin")]
     public class TeachersController : Controller
     {
         protected readonly ILoggerFactory LoggerFactory;

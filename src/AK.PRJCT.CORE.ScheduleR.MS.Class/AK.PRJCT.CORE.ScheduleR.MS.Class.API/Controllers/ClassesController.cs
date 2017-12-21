@@ -3,11 +3,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using AK.PRJCT.CORE.ScheduleR.MS.Class.Business.Services;
 using AK.PRJCT.CORE.ScheduleR.MS.Class.Domain.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace AK.PRJCT.CORE.ScheduleR.MS.Class.API.Controllers
 {
+    [EnableCors("AllowAnyOrigin")]
     public class ClassesController : Controller
     {
 

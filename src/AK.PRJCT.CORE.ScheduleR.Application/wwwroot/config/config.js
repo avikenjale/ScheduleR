@@ -12,23 +12,23 @@
         $stateProvider
             .state('student', {
                 url: '/student',
-                controller: 'StudentsListController',
-                templateUrl: '../app/html/views/students/students.list.html'
+                controller: 'StudentsController as st',
+                templateUrl: '../app/students/students.list.html'
             })
             .state('teacher', {
                 url: '/teacher',
-                controller: 'TeachersListController',
-                templateUrl: '../app/html/views/teachers/teachers.list.html'
+                controller: 'TeachersController',
+                templateUrl: '../app/teachers/teachers.list.html'
             })
             .state('class', {
                 url: '/class',
-                controller: 'ClassesListController',
-                templateUrl: '../app/html/views/classes/classes.list.html'
+                controller: 'ClassesController as cls',
+                templateUrl: '../app/classes/classes.list.html'
             })
             .state('appointment', {
                 url: '/appointment',
-                controller: 'AppointmentsListController',
-                templateUrl: '../app/html/views/appointments/appointments.list.html'
+                controller: 'AppointmentsController as apt',
+                templateUrl: '../app/appointments/appointments.list.html'
             });
 
         $locationProvider.html5Mode(true);

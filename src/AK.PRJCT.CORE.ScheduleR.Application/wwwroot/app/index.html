@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+
+    <!--App-->
+    <script src="../app/app.js"></script>
+    <script src="../config/config.js"></script>
+    <script src="../services/data/data.module.js"></script>
+
+    <!--Services-->
+    <script src="../services/data/data.students.service.js"></script>
+    <script src="../services/data/data.appointments.service.js"></script>
+    <script src="../services/data/data.classes.service.js"></script>
+    <script src="../services/data/data.teachers.service.js"></script>
+    <!--Controllers-->
+    <script src="../app/students/app.students.controller.js"></script>
+    <script src="../app/classes/app.classes.controller.js"></script>
+    <script src="../app/teachers/app.teachers.controller.js"></script>
+    <script src="../app/appointments/app.appointments.controller.js"></script>
+    <!--Components-->
+    <script src="../components/students.component.js"></script> 
+
+    <base href="/">
+
+</head>
+
+<body ng-app="ScheduleRApp">
+    <div ng-cloak>
+        <md-content class="md-padding">
+            <md-nav-bar nav-bar-aria-label="navigation links">
+                <md-nav-item md-nav-click="goto('student')" name="Student" ui-sref="student">Student</md-nav-item>
+                <md-nav-item md-nav-click="goto('class')" name="Class" ui-sref="class">Class</md-nav-item>
+                <md-nav-item md-nav-click="goto('teacher')" name="Teacher" ui-sref="teacher">Teacher</md-nav-item>
+                <md-nav-item md-nav-click="goto('appointment')" name="Appointment" ui-sref="appointment">Appointment</md-nav-item>
+            </md-nav-bar>
+            <div class="ext-content">
+                <div ui-view></div>
+            </div>
+        </md-content>
+    </div>
+</body>
+
+</html>

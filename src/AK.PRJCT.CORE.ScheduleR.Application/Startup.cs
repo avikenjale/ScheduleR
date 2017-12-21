@@ -28,7 +28,7 @@ namespace AK.PRJCT.CORE.ScheduleR.Application
             // Serve my app-specific default file, if present.
             DefaultFilesOptions options = new DefaultFilesOptions();
             options.DefaultFileNames.Clear();
-            options.DefaultFileNames.Add("html/index.html");
+            options.DefaultFileNames.Add("/index.html");
             app.UseDefaultFiles(options);
             app.UseStaticFiles();
         }

@@ -14,14 +14,14 @@ namespace AK.PRJCT.CORE.ScheduleR.MS.Teacher.Data.Extensions
         {
             return new Domain.Models.TeacherModel {
                 TeacherId = teacher.TeacherId,
-                FirstName = teacher.FirstName,
-                LastName = teacher.LastName,
-                PhoneNumber = teacher.PhoneNumber,
-                Email = teacher.Email,
-                Address = teacher.Address,
-                City = teacher.City,
-                State = teacher.State,
-                Zip = teacher.Zip
+                TeacherFirstName = teacher.FirstName,
+                TeacherLastName = teacher.LastName,
+                TeacherPhoneNumber = teacher.PhoneNumber,
+                TeacherEmail = teacher.Email,
+                TeacherAddress = teacher.Address,
+                TeacherCity = teacher.City,
+                TeacherState = teacher.State,
+                TeacherZip = teacher.Zip
             };
         }
     }

@@ -2,11 +2,11 @@
     'use strict';
 
     angular.module('data.service')
-        .factory('TeacherService', TeacherService);
+        .factory('TeacherDataService', TeacherDataService);
 
-    TeacherService.$inject = ['$http'];
+    TeacherDataService.$inject = ['$http'];
 
-    function TeacherService($http) {
+    function TeacherDataService($http) {
 
         var baseUrl = "http://localhost:9001/api/teachers";
 

@@ -3,11 +3,11 @@
 
     angular
         .module('data.service')
-        .factory('StudentsService', StudentsService);
+        .factory('StudentDataService', StudentDataService);
 
-    StudentsService.$inject = ['$http'];
+    StudentDataService.$inject = ['$http'];
 
-    function StudentsService($http) {
+    function StudentDataService($http) {
         var baseUrl = 'http://localhost:9000/api/students';
         var studentService = {
             getStudents: getStudents,

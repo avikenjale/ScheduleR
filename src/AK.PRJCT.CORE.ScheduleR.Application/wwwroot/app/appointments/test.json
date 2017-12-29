@@ -1,0 +1,172 @@
+[
+    {
+        "teacherAppointmentDetails": [
+            {
+                "slot": "10:00"
+            },
+            {
+                "slot": "10:30"
+            },
+            {
+                "slot": "11:00"
+            },
+            {
+                "slot": "11:30"
+            },
+            {
+                "slot": "12:00"
+            },
+            {
+                "slot": "12:30"
+            },
+            {
+                "slot": "13:00"
+            },
+            {
+                "slot": "13:30"
+            },
+            {
+                "slot": "14:00"
+            },
+            {
+                "slot": "14:30"
+            },
+            {
+                "slot": "15:00"
+            },
+            {
+                "slot": "15:30"
+            },
+            {
+                "slot": "16:00"
+            },
+            {
+                "slot": "16:30"
+            },
+            {
+                "slot": "17:00"
+            },
+            {
+                "slot": "17:30"
+            },
+            {
+                "slot": "18:00"
+            },
+            {
+                "slot": "18:30",
+                "appointmentId": 11,
+                "studentId": 1,
+                "classId": 4,
+                "teacherId": 1,
+                "appointmentTime": "2017-12-28 18:30:00",
+                "firstName": "Saisha",
+                "lastName": "Kenjale",
+                "parentId": 1,
+                "title": null,
+                "parentFirstName": "Avinash",
+                "parentLastName": "Kenjale",
+                "phoneNumber": "2017441474",
+                "email": "avi.kenjale@hotmail.com",
+                "address": "77 Sherman Pl, Apt 4",
+                "city": "Jersey City",
+                "state": "NJ",
+                "zip": "07307",
+                "name": "Violin"
+            },
+            {
+                "slot": "19:00"
+            },
+            {
+                "slot": "19:30"
+            }
+        ],
+        "techerId": 1,
+        "teacherFirstName": "Sampada",
+        "teacherLastName": "Kasture"
+    },
+    {
+        "teacherAppointmentDetails": [
+            {
+                "slot": "10:00"
+            },
+            {
+                "slot": "10:30"
+            },
+            {
+                "slot": "11:00"
+            },
+            {
+                "slot": "11:30"
+            },
+            {
+                "slot": "12:00"
+            },
+            {
+                "slot": "12:30"
+            },
+            {
+                "slot": "13:00"
+            },
+            {
+                "slot": "13:30"
+            },
+            {
+                "slot": "14:00"
+            },
+            {
+                "slot": "14:30"
+            },
+            {
+                "slot": "15:00"
+            },
+            {
+                "slot": "15:30"
+            },
+            {
+                "slot": "16:00"
+            },
+            {
+                "slot": "16:30"
+            },
+            {
+                "slot": "17:00"
+            },
+            {
+                "slot": "17:30",
+                "appointmentId": 10,
+                "studentId": 3,
+                "classId": 3,
+                "teacherId": 2,
+                "appointmentTime": "2017-12-28 17:30:00",
+                "firstName": "Ria",
+                "lastName": "Kenjale",
+                "parentId": 2,
+                "title": null,
+                "parentFirstName": "Abhijeet",
+                "parentLastName": "Kenjale",
+                "phoneNumber": "9890112233",
+                "email": "abhijeetkenjale@gmail.com",
+                "address": "Baner",
+                "city": "Pune",
+                "state": "MH",
+                "zip": "411042",
+                "name": "Harmonium"
+            },
+            {
+                "slot": "18:00"
+            },
+            {
+                "slot": "18:30"
+            },
+            {
+                "slot": "19:00"
+            },
+            {
+                "slot": "19:30"
+            }
+        ],
+        "techerId": 2,
+        "teacherFirstName": "Santosh",
+        "teacherLastName": "Jahagirdar"
+    }
+]

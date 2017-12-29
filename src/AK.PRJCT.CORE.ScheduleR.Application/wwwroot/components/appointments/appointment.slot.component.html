@@ -1,0 +1,9 @@
+<!-- <div class="md-headline">{{ctrl.message}}</div> -->
+<div flex layout="row">
+    <div ng-click="ctrl.showAppointment()" flex class="{{ctrl.appointment.name}}">
+        <div>
+            {{ctrl.appointment.firstName}} {{ctrl.getSubstring(ctrl.appointment.lastName,0,1)}}
+        </div>
+        <div>{{ctrl.appointment.name}}</div>
+    </div>
+</div>

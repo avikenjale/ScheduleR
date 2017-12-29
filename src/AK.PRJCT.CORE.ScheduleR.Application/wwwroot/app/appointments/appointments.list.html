@@ -1,3 +1,88 @@
-{{apt.Appointments}}
-<md-button ng-click="apt.GetData()">Load</md-button>
-{{apt.AppointmentStudents}}
+<div layout="column">
+    <div flex="5"></div>
+    <div flex layout="row">
+        <div flex="5" flex-offset="35" style="padding-top:10px;">
+            <label class="md-body-2">Select date</label>
+        </div>
+        <div flex="10">
+            <md-datepicker ng-model="apt.Date" md-placeholder="Enter date"></md-datepicker>
+        </div>
+        <div flex="5">
+            <md-button class="md-raised" ng-click="apt.getAppointmentsByDate()">
+                <i class="material-icons">search</i>
+            </md-button>
+        </div>
+        <div flex="5">
+            <md-button class="md-raised md-accent" ng-click="apt.showScheduleAppointmentDialog(apt.appointment)">Add</md-button>
+        </div>
+    </div>
+    <div flex="5"></div>
+</div>
+<div layout="row">
+    <div flex layout="column">
+        <div flex style="padding-left: 6%" layout="row">
+            <div ng-repeat="slot in apt.DayTimeSlots" flex class="timeSlotLabel">{{slot | twentyFourToTwelve}}</div>
+        </div>
+        <div flex layout="column" ng-repeat="appointment in apt.AppointmentDetails">
+            <div flex layout="row">
+                <div flex="5" class="teacherLabel">
+                    {{appointment.teacherFirstName}}
+                </div>
+                <appointment-slot ng-repeat="teacherAppointment in appointment.teacherAppointments" teacher-id="appointment.teacherId" appointment-date="apt.Date | date:'yyyy-MM-dd'"
+                    appointment-click="apt.showScheduleAppointmentDialog(app)" appointment="teacherAppointment" flex layout="row"></appointment-slot>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="visibility: hidden">
+    <div class="md-dialog-container" id="scheduleAppointDialog" layout="row">
+        <md-dialog flex="40" layout="column" class="md-inline-form" aria-label="List dialog">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>Appointment</h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" ng-click="apt.closeDialog()">
+                        <i class="material-icons">cancel</i>
+                    </md-button>
+                </div>
+            </md-toolbar>
+            <md-dialog-content layout-padding>
+                <form name="appointmentForm">
+                    <md-input-container class="md-block">
+                        <label>Teacher</label>
+                        <md-select ng-disabled="true" name="type" ng-model="apt.appointment.teacherId" required>
+                            <md-option ng-repeat="appointment in apt.AppointmentDetails" value="{{appointment.teacherId}}">
+                                {{appointment.teacherFirstName}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Class</label>
+                        <md-select name="type" ng-model="apt.appointment.classId" required>
+                            <md-option value="1">Grand Piano</md-option>
+                            <md-option value="2">Guitar</md-option>
+                            <md-option value="3">Harmonium</md-option>
+                            <md-option value="4">Violin</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Student</label>
+                        <md-select name="type" ng-model="apt.appointment.studentId" required>
+                            <md-option value="1">Saisha kenjale</md-option>
+                            <md-option value="3">Ria Kenjale</md-option>
+                            <md-option value="4">Rasika Kenjale</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Appointment Time</label>
+                        <input ng-disabled="true" ng-model="apt.appointment.appointmentTime" type="text">
+                    </md-input-container>
+                </form>
+            </md-dialog-content>
+            <md-dialog-actions>
+                <md-button ng-click="apt.saveAppointment()" class="md-raised md-primary">Save</md-button>
+                <md-button ng-click="apt.closeDialog()" class="md-primary">Close Dialog</md-button>
+            </md-dialog-actions>
+        </md-dialog>
+    </div>
+</div>
